@@ -76,12 +76,6 @@ def single_book(id):
         author = request.form["author"]
         language = request.form["language"]
         title = request.form["title"]
-        updated_book = {
-            "id": id,
-            "author": author,
-            "language": language,
-            "title": title,
-        }
         cursor.execute(sql, (author, language, title, id))
         conn.commit()
         return "update successfully"
